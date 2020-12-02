@@ -14,9 +14,8 @@ public class Account {
     private String userName;
     private String password;
 
-   // public Account() {  
-   // }
-
+    public Account() {  
+    }
     
     public Account(long accountID, String userName, String password) {
         this.accountID = accountID;
