@@ -1,10 +1,13 @@
 /*
  */
 package com.mycompany.mymovies1.resources;
+import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Customer;
+import com.mycompany.mymovies1.service.AccountService;
 import com.mycompany.mymovies1.service.CustomerService;
 import java.util.List;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -12,11 +15,12 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.QueryParam;
 /**
  *
- * @author Alex.Selby
+ * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 @Path("/customers")
 public class CustomerResource {
     CustomerService customerService = new CustomerService();
+     AccountService accountService = new AccountService();
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Customer> getCustomersJSON(){
@@ -39,4 +43,21 @@ public class CustomerResource {
     public Customer getCustomerXML(@PathParam("customerID") int id){
         return customerService.getCustomer(id);
 }
+        @GET
+    @Path ("/{customerID}/accounts")
+    @Produces(MediaType.APPLICATION_XML)
+    public List<Account> getAllAccountsbyCustomerXML(@PathParam("customerID") int id){
+        return customerService.getAllAccountsByCustomer(id);
+}
+    @GET
+    @Path ("/{customerID}/accounts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Account> getAllAccountsbyCustomerJSON(@PathParam("customerID") int id){
+        return customerService.getAllAccountsByCustomer(id);
+}
+    @POST
+    @Path ("/{customerID}/create")
+    public Account createAccount(Account acc){
+        return accountService.createAccount(acc);
+    }
 }
