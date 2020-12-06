@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author Alex.Selby
+ * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class AccountService {
         public static List<Account> accList = new ArrayList<>();
@@ -15,11 +15,11 @@ public class AccountService {
     
         public AccountService() {
         if (init) {
-            Account a1 = new Account(1, "J.RashFord1", "iLoveMovies181");
-            Account a2 = new Account(2, "RachelRashford97", "RR231097movies");
-            Account a3 = new Account(3, "JSparrow12", "castletownHome184");
-            Account a4 = new Account(4, "EmerOD", "ItIsMovieTime");
-            Account a5 = new Account(5, "MaryM123", "myAccount#1");
+            Account a1 = new Account(1,1, "J.RashFord1", "iLoveMovies181");
+            Account a2 = new Account(1,2, "RachelRashford97", "RR231097movies");
+            Account a3 = new Account(1,3, "JSparrow12", "castletownHome184");
+            Account a4 = new Account(2,4, "EmerOD", "ItIsMovieTime");
+            Account a5 = new Account(2,5, "MaryM123", "myAccount#1");
             accList.add(a1);
             accList.add(a2);
             accList.add(a3);
