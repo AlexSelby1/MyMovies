@@ -1,17 +1,19 @@
 package com.mycompany.mymovies1.service;
 
+import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Customer;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author Alex.Selby
+ * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class CustomerService {
     
     public static List<Customer> custList = new ArrayList<>();
     public static boolean init = true;
+    AccountService accService = new AccountService();
     
         public CustomerService() {
         if (init) {
@@ -32,5 +34,15 @@ public class CustomerService {
            public Customer getCustomer(int id) {
         return custList.get(id - 1);
     }   
+               //Getting all accounts by customerID
+    public List<Account> getAllAccountsByCustomer(int id) {
+        List<Account> matcheslist = new ArrayList<>();
+        for (Account b : accService.getAllAccounts()) {
+            if ((b.getCustomerID() == (id))) {
+                matcheslist.add(b);
+            }
+        }
+        return matcheslist;
+    }
    
 }
