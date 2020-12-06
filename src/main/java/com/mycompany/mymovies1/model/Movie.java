@@ -4,7 +4,7 @@ package com.mycompany.mymovies1.model;
 
 /**
  *
- * @author User
+ * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 
 public class Movie {
