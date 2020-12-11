@@ -40,14 +40,5 @@ public class AccountResource {
     public Account getAccountXML(@PathParam("accountID") int id){
         return accountService.getAccount(id);
 }
-        /*@GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Account> getAllAccountsbyCustomerXML(@PathParam("customerID") int id){
-        return accountService.getAllAccountsByCustomer(id);
-}
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Account> getAllAccountsbyCustomerJSON(@PathParam("customerID") int id){
-        return accountService.getAllAccountsByCustomer(id);
-}*/
+
 }
