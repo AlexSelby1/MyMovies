@@ -10,38 +10,27 @@ package com.mycompany.mymovies1.model;
 public class Movie {
 
 //Variables
-    private long accountID;
-    private long customerID;
+    private long movieID;
     private String movieName;
     private String releaseDate;
     private String summary;
 
 //    Constructor
-    public Movie(long accountID,long customerID,String movieName, String releaseDate,String summary,boolean watched,boolean recommended) {
-        this.accountID=accountID;
-        this.customerID=customerID;
+    public Movie(long movieID,String movieName, String releaseDate,String summary) {
+        this.movieID=movieID;
         this.movieName = movieName;
         this.releaseDate = releaseDate;
         this.summary = summary;
     }
     
 //    Getters and Setters
-    public long getAccountID() {
-        return accountID;
+    public long getMovieID() {
+        return movieID;
     }
 
-    public void setAccountID(long accountID) {
-        this.accountID =
-                accountID;
-    }
-
-    public long getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(long customerID) {
-        this.customerID =
-                customerID;
+    public void setMovieID(long movieID) {
+        this.movieID =
+                movieID;
     }
     
     public String getMovieName() {
