@@ -5,6 +5,9 @@
  */
 package com.mycompany.mymovies1.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Alex Selby, Conor Dixon, Lukasz Plawinski
@@ -14,7 +17,20 @@ public class Account {
     private String userName;
     private String password;
     private long customerID;
+    private List<Movie> myList=new ArrayList<Movie>();
 
+    public List<Movie> getMyList() {
+        return myList;
+    }
+
+    public void setMyList(List<Movie> myList) {
+        this.myList =
+                myList;
+    }
+    
+    public void addMovie(Movie m){
+        myList.add(m);
+    }
 
     public Account() {  
     }
