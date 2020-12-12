@@ -18,10 +18,15 @@ public class Movie {
     private boolean watched;
     private boolean recommended;
     
+
+//    Constructors
     public Movie() {
         
     }
-//    Constructor
+    public Movie(boolean watched,boolean recommended) {
+        this.watched = watched;
+        this.recommended = recommended;
+    }
     public Movie(long movieID,String movieName, String releaseDate,String summary,boolean watched,boolean recommended) {
         this.movieID=movieID;
         this.movieName = movieName;
