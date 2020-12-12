@@ -14,16 +14,21 @@ public class Movie {
     private String movieName;
     private String releaseDate;
     private String summary;
+
+    private boolean watched;
+    private boolean recommended;
     
     public Movie() {
         
     }
 //    Constructor
-    public Movie(long movieID,String movieName, String releaseDate,String summary) {
+    public Movie(long movieID,String movieName, String releaseDate,String summary,boolean watched,boolean recommended) {
         this.movieID=movieID;
         this.movieName = movieName;
         this.releaseDate = releaseDate;
         this.summary = summary;
+        this.watched = watched;
+        this.recommended = recommended;
     }
     
 //    Getters and Setters
@@ -61,6 +66,24 @@ public class Movie {
     public void setSummary(String summary) {
         this.summary =
                 summary;
+    }
+    
+    public boolean isWatched() {
+        return watched;
+    }
+
+    public void setWatched(boolean watched) {
+        this.watched =
+                watched;
+    }
+
+    public boolean isRecommended() {
+        return recommended;
+    }
+
+    public void setRecommended(boolean recommended) {
+        this.recommended =
+                recommended;
     }
 
 }
