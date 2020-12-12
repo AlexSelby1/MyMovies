@@ -2,6 +2,7 @@ package com.mycompany.mymovies1.service;
 
 import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Customer;
+import com.mycompany.mymovies1.model.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,24 @@ public class CustomerService {
             }
         }
         return matcheslist;
+    }
+    public Movie transferMovie(long movieID,long fromID,long toID){
+        Account fromAcc=accService.getAccount((int)fromID);
+        Account toAcc=accService.getAccount((int)toID);
+        List<Movie> fromList=fromAcc.getMyList();
+        List<Movie> toList=toAcc.getMyList();
+        Movie transferedMovie= new Movie();
+        
+        
+        
+        for(Movie m:fromAcc.getMyList()){
+            if(movieID==m.getMovieID()){
+                transferedMovie=m;
+            }
+        }
+        fromList.remove(transferedMovie);
+        toAcc.addMovie(transferedMovie);
+        return transferedMovie;
     }
    
 }
