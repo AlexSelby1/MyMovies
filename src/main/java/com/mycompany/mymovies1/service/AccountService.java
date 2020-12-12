@@ -2,6 +2,7 @@
 package com.mycompany.mymovies1.service;
 
 import com.mycompany.mymovies1.model.Account;
+import com.mycompany.mymovies1.model.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  */
 public class AccountService {
         public static List<Account> accList = new ArrayList<>();
+        MovieService movieService=new MovieService();
     public static boolean init = true;
     
         public AccountService() {
@@ -41,6 +43,26 @@ public class AccountService {
                 + String.valueOf(a.getAccountID()));
         return a;
     }
+        
+        //Method which add Movie to personal movieList from global List by account id and movie ID
+        public String addMovie(long movieID,long accountID){
+            Account matchedAcc=new Account();
+            Movie addedMovie=new Movie();
+            for(Account acc: this.getAllAccounts()){
+                if(accountID==acc.getAccountID()){
+                    matchedAcc=acc;
+                }
+            }
+            for (Movie m: movieService.getAllMovies()) {
+                if ( m.getMovieID()==movieID) {
+                    matchedAcc.addMovie(m);
+                    addedMovie=m;
+                }
+                
+            }
+            return addedMovie.getMovieName();
+             
+        }
    
 }
 
