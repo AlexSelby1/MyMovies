@@ -39,10 +39,10 @@ public class MovieService {
            public Movie getMovies(int id) {
         return movieList.get(id - 1);
     }   
-        public Movie createMovie(Movie a) {
-        movieList.add(a);
-        System.out.println("201 - resource created with path: /Accounts/"
-                + String.valueOf(a.getMovieName()));
-        return a;
-    }
+//        public Movie createMovie(Movie a) {
+//        movieList.add(a);
+//        System.out.println("201 - resource created with path: /Accounts/"
+//                + String.valueOf(a.getMovieName()));
+//        return a;
+//    }
 }
