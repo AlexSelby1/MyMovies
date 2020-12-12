@@ -3,6 +3,7 @@
 package com.mycompany.mymovies1.resources;
 import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Customer;
+import com.mycompany.mymovies1.model.Movie;
 import com.mycompany.mymovies1.service.AccountService;
 import com.mycompany.mymovies1.service.CustomerService;
 import java.util.List;
@@ -64,9 +65,8 @@ public class CustomerResource {
         return accountService.createAccount(acc);
     }
     @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Path ("/{customerID}/transferMovie/{movieID}?from={fromID}&to={toID}")
-    public Movie transferMovie(@QueryParam("movieID") long movieID,@QueryParam("fromID") long fromID,@QueryParam("toID") long toID){
+    @Path ("/{customerID}/transferMovie/{movieID}")
+    public Movie transferMovie(@PathParam("movieID") long movieID,@QueryParam("fromID") long fromID,@QueryParam("toID") long toID){
         return customerService.transferMovie(movieID,fromID,toID);
     }
 }
