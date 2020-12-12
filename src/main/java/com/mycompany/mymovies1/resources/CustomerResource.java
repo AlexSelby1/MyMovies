@@ -6,6 +6,7 @@ import com.mycompany.mymovies1.model.Customer;
 import com.mycompany.mymovies1.service.AccountService;
 import com.mycompany.mymovies1.service.CustomerService;
 import java.util.List;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -56,6 +57,7 @@ public class CustomerResource {
         return customerService.getAllAccountsByCustomer(id);
 }
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Path ("/{customerID}/create")
     public Account createAccount(Account acc){
         return accountService.createAccount(acc);
