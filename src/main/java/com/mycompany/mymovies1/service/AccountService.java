@@ -63,6 +63,26 @@ public class AccountService {
             return addedMovie.getMovieName();
              
         }
+        
+        public Movie updateMovie(long movieID,long accountID,Movie m){
+            Account matchedAcc=new Account();
+            Movie movieToUpdate=new Movie();
+            for(Account acc: this.getAllAccounts()){
+                if(accountID==acc.getAccountID()){
+                    matchedAcc=acc;
+                }
+            }
+            for(Movie movie: matchedAcc.getMyList()){
+                if(movieID==movie.getMovieID()){
+                    movieToUpdate=movie;
+                    movieToUpdate.setWatched(m.isWatched());
+                    movieToUpdate.setRecommended(m.isRecommended());                   
+                }
+
+            }
+          
+            return movieToUpdate;
+        }
    
 }
 
