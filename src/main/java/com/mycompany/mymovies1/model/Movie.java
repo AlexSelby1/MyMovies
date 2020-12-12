@@ -14,7 +14,10 @@ public class Movie {
     private String movieName;
     private String releaseDate;
     private String summary;
-
+    
+    public Movie() {
+        
+    }
 //    Constructor
     public Movie(long movieID,String movieName, String releaseDate,String summary) {
         this.movieID=movieID;
