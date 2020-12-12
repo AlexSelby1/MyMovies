@@ -9,6 +9,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -61,5 +62,11 @@ public class CustomerResource {
     @Path ("/{customerID}/create")
     public Account createAccount(Account acc){
         return accountService.createAccount(acc);
+    }
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path ("/{customerID}/transferMovie/{movieID}?from={fromID}&to={toID}")
+    public Movie transferMovie(@QueryParam("movieID") long movieID,@QueryParam("fromID") long fromID,@QueryParam("toID") long toID){
+        return customerService.transferMovie(movieID,fromID,toID);
     }
 }
