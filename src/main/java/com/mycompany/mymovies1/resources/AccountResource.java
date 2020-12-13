@@ -28,13 +28,7 @@ public class AccountResource {
     public Account getAccountJSON(@PathParam("accountID") int id){
         return accountService.getAccount(id);
     }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Account> getAccountsXML(){
-        return accountService.getAllAccounts();
-    }
-    
+
     @GET
     @Path ("/{accountID}")
     @Produces(MediaType.APPLICATION_XML)
