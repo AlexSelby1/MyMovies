@@ -24,25 +24,14 @@ public class CustomerResource {
     CustomerService customerService = new CustomerService();
      AccountService accountService = new AccountService();
      
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Customer> getCustomersJSON(){
-        return customerService.getAllCustomers();
-    }
-    
+
     @GET
     @Path ("/{customerID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Customer getCustomersJSON(@PathParam("customerID") int id){
         return customerService.getCustomer(id);
     }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Customer> getCustomerXML(){
-        return customerService.getAllCustomers();
-    }
-    
+
     @GET
     @Path ("/{customerID}")
     @Produces(MediaType.APPLICATION_XML)
