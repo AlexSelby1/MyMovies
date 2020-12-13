@@ -19,6 +19,7 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/admin")
 public class AdminResource {
+//  Admin service object
     AdminService adminService= new AdminService();
     
     @GET
@@ -27,53 +28,62 @@ public class AdminResource {
     public List<Customer> getAllCustomersJSON(){
         return adminService.getAllCustomers();
     }
+    
     @GET
     @Path ("/customers")
     @Produces(MediaType.APPLICATION_XML)
     public List<Customer> getAllCustomersXML(){
-    return adminService.getAllCustomers();
-}
+        return adminService.getAllCustomers();
+    }
+    
     @GET
     @Path ("/customers/{customerID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Customer getCustomersJSON(@PathParam("customerID") int id){
-    return adminService.getCustomer(id);
-}
+        return adminService.getCustomer(id);
+    }
+    
     @GET
     @Path ("/customers/{customerID}")
     @Produces(MediaType.APPLICATION_XML)
     public Customer getCustomersXML(@PathParam("customerID") int id){
-    return adminService.getCustomer(id);
-}
+        return adminService.getCustomer(id);
+    }
+    
     @POST
     @Path ("/customers/create")
     public Customer createCustomer(Customer c){
         return adminService.createCustomer(c);
     }
-        @GET
+    
+    @GET
     @Path ("/movies")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Movie> getAllMoviesJSON(){
         return adminService.getAllMovies();
     }
+    
     @GET
     @Path ("/movies")
     @Produces(MediaType.APPLICATION_XML)
     public List<Movie> getAllMoviesXML(){
-    return adminService.getAllMovies();
-}
+        return adminService.getAllMovies();
+    }
+    
     @GET
     @Path ("/movies/{movieID}")
     @Produces(MediaType.APPLICATION_JSON)
     public Movie getMovieJSON(@PathParam("movieID") int id){
-    return adminService.getMovie(id);
-}
+        return adminService.getMovie(id);
+    }
+    
     @GET
     @Path ("/movies/{movieID}")
     @Produces(MediaType.APPLICATION_XML)
     public Movie getMovieXML(@PathParam("movieID") int id){
-    return adminService.getMovie(id);
-}
+        return adminService.getMovie(id);
+    }
+    
     @POST
     @Path ("/movies/create")
     public Movie createMovie(Movie m){
