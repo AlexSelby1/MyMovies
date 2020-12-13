@@ -16,18 +16,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/movies")
 public class MovieResource {
     MovieService movieService = new MovieService();
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Movie> getListOfMoviesXML(){
-        return movieService.getAllMovies();
-    }
-    
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Movie> getListOfMoviesJSON(){
-        return movieService.getAllMovies();
-    }
-    
+ 
     @GET
     @Path ("/{movieID}")
     @Produces(MediaType.APPLICATION_JSON)
