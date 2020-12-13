@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.mymovies1.model;
 
 import java.util.ArrayList;
@@ -13,25 +8,28 @@ import java.util.List;
  * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class Account {
+//    Variables
     private long accountID;
     private String userName;
     private String password;
     private long customerID;
     private List<Movie> myList=new ArrayList<Movie>();
-
+    
+//    Displaying personal list of the movies
     public List<Movie> getMyList() {
         return myList;
     }
 
     public void setMyList(List<Movie> myList) {
-        this.myList =
-                myList;
+        this.myList = myList;
     }
     
+//    Adding movie to the personal list
     public void addMovie(Movie m){
         myList.add(m);
     }
 
+//    Constructors
     public Account() {  
     }
     
@@ -41,6 +39,8 @@ public class Account {
         this.userName = userName;
         this.password = password;
     }
+    
+//    Setters and Getters
         public long getCustomerID() {
         return customerID;
     }

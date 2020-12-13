@@ -6,9 +6,11 @@ package com.mycompany.mymovies1.model;
  */
 
 public class Admin {
+//    Variables
     private String userName;
     private String password;
 
+//    Constructors
     public Admin() {
     }
 
@@ -17,7 +19,7 @@ public class Admin {
         this.password = password;
     }
     
-
+//    Setters and Getters
     public String getUserName() {
         return userName;
     }

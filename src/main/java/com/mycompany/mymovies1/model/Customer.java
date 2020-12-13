@@ -11,11 +11,13 @@ package com.mycompany.mymovies1.model;
  */
 public class Customer {
     
+//    Variables
     private long customerID;
     private String name;
     private String address;
     private String email;
 
+//    Constructors
     public Customer() {
    }
 
@@ -26,6 +28,7 @@ public class Customer {
         this.email = email;
     }
 
+//    Setters and Getters
     public long getCustomerID() {
         return customerID;
     }
