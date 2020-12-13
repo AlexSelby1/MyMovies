@@ -10,13 +10,15 @@ import java.util.List;
 
 /**
  *
- * @author Alex.Selby
+ * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class AdminService {
-    public static List<Admin> adList = new ArrayList<>();
-   // public static List<Customer> custList = new ArrayList<>();
-    public static List<Movie> movieList = new ArrayList<>();
+//    Variables
     public static boolean init = true;
+    
+//    Objects
+    public static List<Admin> adList = new ArrayList<>();
+    public static List<Movie> movieList = new ArrayList<>();
     MovieService movieService = new MovieService();
     CustomerService customerService = new CustomerService();
     
@@ -33,27 +35,29 @@ public class AdminService {
         }
     }
     //Get all customers, get specific customer, post new customer
-         public List<Customer> getAllCustomers() {
+    public List<Customer> getAllCustomers() {
         return customerService.getAllCustomers();
-        }
-        public Customer getCustomer(int id) {
+    }
+    
+    public Customer getCustomer(int id) {
         return customerService.getCustomer(id);
     }  
-        public Customer createCustomer(Customer c) {
+    
+    public Customer createCustomer(Customer c) {
         c.setCustomerID(customerService.getAllCustomers().size() + 1);
         customerService.getAllCustomers().add(c);
         System.out.println("201 - resource created with path: /Customers/"
                 + String.valueOf(c.getCustomerID()));
         return c;
     }
-        //Get all movies, get specific movie, post new movie
-        public List<Movie> getAllMovies() {
+    //Get all movies, get specific movie, post new movie
+    public List<Movie> getAllMovies() {
         return movieService.getAllMovies();
-        }
-        public Movie getMovie(int id) {
+    }
+    public Movie getMovie(int id) {
         return movieService.getMovies(id);
     }  
-        public Movie createMovie(Movie m) {
+    public Movie createMovie(Movie m) {
         m.setMovieID(movieService.getAllMovies().size() + 1);
         movieService.getAllMovies().add(m);
         System.out.println("201 - resource created with path: /Movies/"
