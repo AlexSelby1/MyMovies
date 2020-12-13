@@ -20,11 +20,7 @@ public class AccountResource {
 //  Account Service object
     AccountService accountService = new AccountService();
     
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Account> getAccountsJSON(){
-        return accountService.getAllAccounts();
-    }
+
     
     @GET
     @Path ("/{accountID}")

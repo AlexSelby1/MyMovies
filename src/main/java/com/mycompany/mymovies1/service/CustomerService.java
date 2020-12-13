@@ -29,7 +29,7 @@ public class CustomerService {
             init = false;
         }
     }
-        
+
     public List<Customer> getAllCustomers() {
         return custList;
     }

@@ -1,6 +1,7 @@
 
 package com.mycompany.mymovies1.resources;
 
+import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Customer;
 import com.mycompany.mymovies1.model.Movie;
 import com.mycompany.mymovies1.service.AdminService;
@@ -22,6 +23,12 @@ public class AdminResource {
 //  Admin service object
     AdminService adminService= new AdminService();
     
+    @GET
+    @Path("/accounts")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Account> getAccountsJSON(){
+        return adminService.getAllAccounts();
+    }
     @GET
     @Path ("/customers")
     @Produces(MediaType.APPLICATION_JSON)

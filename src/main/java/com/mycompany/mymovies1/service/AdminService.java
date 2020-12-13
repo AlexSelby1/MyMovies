@@ -1,6 +1,7 @@
 
 package com.mycompany.mymovies1.service;
 
+import com.mycompany.mymovies1.model.Account;
 import com.mycompany.mymovies1.model.Admin;
 import com.mycompany.mymovies1.model.Customer;
 import com.mycompany.mymovies1.service.CustomerService;
@@ -21,6 +22,7 @@ public class AdminService {
     public static List<Movie> movieList = new ArrayList<>();
     MovieService movieService = new MovieService();
     CustomerService customerService = new CustomerService();
+    AccountService accService = new AccountService();
     
     public AdminService(){
         if(init){
@@ -33,6 +35,10 @@ public class AdminService {
             adList.add(ad2);
             adList.add(ad3);
         }
+    }
+//    Get all accounts
+    public List<Account> getAllAccounts(){
+        return accService.getAllAccounts();
     }
     //Get all customers, get specific customer, post new customer
     public List<Customer> getAllCustomers() {
