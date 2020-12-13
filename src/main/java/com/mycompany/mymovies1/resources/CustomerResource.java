@@ -52,6 +52,12 @@ public class CustomerResource {
     public List<Account> getAllAccountsbyCustomerJSON(@PathParam("customerID") int id){
         return customerService.getAllAccountsByCustomer(id);
     }
+    @GET
+    @Path ("/{customerID}/accounts/{accountID}/movielist")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Movie> getAccountMovieList(@PathParam("accountID") int id){
+        return accountService.getMyMovies(id);
+    }
     
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

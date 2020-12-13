@@ -47,6 +47,11 @@ public class AccountService {
                 + String.valueOf(a.getAccountID()));
         return a;
     }
+    
+    public List<Movie> getMyMovies(long accountID){
+        Account matchedAcc=this.getAccount((int)accountID);
+        return matchedAcc.getMyList();
+    }
         
     //Method which adds Movie to personal movieList from global List by account id and movie ID
     public String addMovie(long movieID,long accountID){
