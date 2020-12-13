@@ -69,6 +69,30 @@ public class AccountService {
         return addedMovie.getMovieName();
 
     }
+    
+    public String deleteMovie(long movieID,long accountID){
+//        Objects
+        Account matchedAcc=new Account();
+        Movie deletedMovie=new Movie();
+        
+        for(Account acc: this.getAllAccounts()){
+            if(accountID==acc.getAccountID()){
+                matchedAcc=acc;
+            }
+        }
+
+        for (Movie m: matchedAcc.getMyList()) {
+            if ( m.getMovieID()==movieID) {
+                deletedMovie=m;
+            }
+
+        }
+        
+        matchedAcc.getMyList().remove(deletedMovie);
+        
+        return deletedMovie.getMovieName();
+
+    }
 //    Method which updates Movie watched and recommended parameters
     public Movie updateMovie(long movieID,long accountID,Movie m){
         Account matchedAcc=new Account();

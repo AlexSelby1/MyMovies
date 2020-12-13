@@ -59,6 +59,7 @@ public class AdminResource {
     
     @POST
     @Path ("/customers/create")
+    @Produces(MediaType.APPLICATION_JSON)
     public Customer createCustomer(Customer c){
         return adminService.createCustomer(c);
     }
