@@ -29,13 +29,15 @@ public class CustomerService {
             init = false;
         }
     }
-            public List<Customer> getAllCustomers() {
+        
+    public List<Customer> getAllCustomers() {
         return custList;
     }
-           public Customer getCustomer(int id) {
+    
+    public Customer getCustomer(int id) {
         return custList.get(id - 1);
     }   
-               //Getting all accounts by customerID
+    //Getting all accounts by customerID
     public List<Account> getAllAccountsByCustomer(int id) {
         List<Account> matcheslist = new ArrayList<>();
         for (Account b : accService.getAllAccounts()) {
@@ -45,22 +47,25 @@ public class CustomerService {
         }
         return matcheslist;
     }
+    
+//    Transfer a movie from one account to another one 
     public Movie transferMovie(long movieID,long fromID,long toID){
+//        Objects and variables
         Account fromAcc=accService.getAccount((int)fromID);
         Account toAcc=accService.getAccount((int)toID);
         List<Movie> fromList=fromAcc.getMyList();
         List<Movie> toList=toAcc.getMyList();
         Movie transferedMovie= new Movie();
         
-        
-        
         for(Movie m:fromAcc.getMyList()){
             if(movieID==m.getMovieID()){
                 transferedMovie=m;
             }
         }
+        
         fromList.remove(transferedMovie);
         toAcc.addMovie(transferedMovie);
+        
         return transferedMovie;
     }
    
