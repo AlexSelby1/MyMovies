@@ -11,11 +11,15 @@ import java.util.List;
  * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class AccountService {
-        public static List<Account> accList = new ArrayList<>();
-        MovieService movieService=new MovieService();
+//    Variables
     public static boolean init = true;
     
-        public AccountService() {
+//    Objects
+    public static List<Account> accList = new ArrayList<>();
+    MovieService movieService=new MovieService();
+    
+//    Fills up accList with new Accounts
+    public AccountService() {
         if (init) {
             Account a1 = new Account(1,1, "J.RashFord1", "iLoveMovies181");
             Account a2 = new Account(1,2, "RachelRashford97", "RR231097movies");
@@ -30,13 +34,13 @@ public class AccountService {
             init = false;
         }
     }
-            public List<Account> getAllAccounts() {
+    public List<Account> getAllAccounts() {
         return accList;
     }
-           public Account getAccount(int id) {
+    public Account getAccount(int id) {
         return accList.get(id - 1);
     }   
-        public Account createAccount(Account a) {
+    public Account createAccount(Account a) {
         a.setAccountID(accList.size() + 1);
         accList.add(a);
         System.out.println("201 - resource created with path: /Accounts/"
@@ -44,45 +48,47 @@ public class AccountService {
         return a;
     }
         
-        //Method which add Movie to personal movieList from global List by account id and movie ID
-        public String addMovie(long movieID,long accountID){
-            Account matchedAcc=new Account();
-            Movie addedMovie=new Movie();
-            for(Account acc: this.getAllAccounts()){
-                if(accountID==acc.getAccountID()){
-                    matchedAcc=acc;
-                }
-            }
-            for (Movie m: movieService.getAllMovies()) {
-                if ( m.getMovieID()==movieID) {
-                    matchedAcc.addMovie(m);
-                    addedMovie=m;
-                }
-                
-            }
-            return addedMovie.getMovieName();
-             
-        }
+    //Method which adds Movie to personal movieList from global List by account id and movie ID
+    public String addMovie(long movieID,long accountID){
+//        Objects
+        Account matchedAcc=new Account();
+        Movie addedMovie=new Movie();
         
-        public Movie updateMovie(long movieID,long accountID,Movie m){
-            Account matchedAcc=new Account();
-            Movie movieToUpdate=new Movie();
-            for(Account acc: this.getAllAccounts()){
-                if(accountID==acc.getAccountID()){
-                    matchedAcc=acc;
-                }
+        for(Account acc: this.getAllAccounts()){
+            if(accountID==acc.getAccountID()){
+                matchedAcc=acc;
             }
-            for(Movie movie: matchedAcc.getMyList()){
-                if(movieID==movie.getMovieID()){
-                    movieToUpdate=movie;
-                    movieToUpdate.setWatched(m.isWatched());
-                    movieToUpdate.setRecommended(m.isRecommended());                   
-                }
-
-            }
-          
-            return movieToUpdate;
         }
+        for (Movie m: movieService.getAllMovies()) {
+            if ( m.getMovieID()==movieID) {
+                matchedAcc.addMovie(m);
+                addedMovie=m;
+            }
+
+        }
+        return addedMovie.getMovieName();
+
+    }
+//    Method which updates Movie watched and recommended parameters
+    public Movie updateMovie(long movieID,long accountID,Movie m){
+        Account matchedAcc=new Account();
+        Movie movieToUpdate=new Movie();
+        for(Account acc: this.getAllAccounts()){
+            if(accountID==acc.getAccountID()){
+                matchedAcc=acc;
+            }
+        }
+        for(Movie movie: matchedAcc.getMyList()){
+            if(movieID==movie.getMovieID()){
+                movieToUpdate=movie;
+                movieToUpdate.setWatched(m.isWatched());
+                movieToUpdate.setRecommended(m.isRecommended());                   
+            }
+
+        }
+
+        return movieToUpdate;
+    }
    
 }
 
