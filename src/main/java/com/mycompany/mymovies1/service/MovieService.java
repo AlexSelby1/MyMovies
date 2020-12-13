@@ -1,5 +1,3 @@
-/*
- */
 package com.mycompany.mymovies1.service;
 
 import com.mycompany.mymovies1.model.Account;
@@ -12,10 +10,13 @@ import java.util.List;
  * @author Alex Selby, Conor Dixon, Lukasz Plawinski
  */
 public class MovieService {
+    
+//    Objects and Variables
     public static List<Movie> movieList = new ArrayList<>();
     public static boolean init = true;
     
-        public MovieService() {
+//    Fills up Movie list with new movies
+    public MovieService() {
         if (init) {
             Movie m1 = new Movie(1, "The Shawshank Redemption", "1994",
             "Andy Dufresne (Tim Robbins) is sentenced to two consecutive life terms in prison for the murders of his wife and her lover and is sentenced to a tough prison. However, only Andy knows he didn't commit the crimes.",false,false);
@@ -33,10 +34,10 @@ public class MovieService {
             init = false;
         }
     }
-            public List<Movie> getAllMovies() {
+    public List<Movie> getAllMovies() {
         return movieList;
     }
-           public Movie getMovies(int id) {
+    public Movie getMovies(int id) {
         return movieList.get(id - 1);
     }   
 }
