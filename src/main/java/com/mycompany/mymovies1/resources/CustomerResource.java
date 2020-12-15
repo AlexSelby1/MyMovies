@@ -22,7 +22,7 @@ import javax.ws.rs.QueryParam;
 public class CustomerResource {
 //    Objects
     CustomerService customerService = new CustomerService();
-     AccountService accountService = new AccountService();
+    AccountService accountService = new AccountService();
      
 
     @GET
