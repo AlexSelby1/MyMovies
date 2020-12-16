@@ -1,29 +1,29 @@
 
-Web Services and API Development
-Higher Diploma in Science in Computing – Part-time – Year 1 –
-HDSDEV_JANOL_Y1
+# Web Services and API Development
+# Higher Diploma in Science in Computing – Part-time – Year 1 –
+# HDSDEV_JANOL_Y1
 
-Continuous Assessment 2 (50%) Team Project
+## Continuous Assessment 2 (50%) Team Project
  
 
-Group A
-Student No	First Name	Surname
-x19206968	Lukasz	Plawinski
-x19222114	Alexander	Selby
-x13122657	Conor 	Dixon
+## Group A
+### Student No	First Name	Surname
+### x19206968	Lukasz	Plawinski
+### x19222114	Alexander	Selby
+### x13122657	Conor 	Dixon
 
 
 
-Introduction
+## Introduction
 
 The problem of designing the Movies on Demand API service entails as follows. The API should allow customers and associated customer accounts to be requested from the API. The customer should be able to create multiple accounts associated with that customer. The list of accounts associated with the customer may be requested from the API. The account should have a list of movies and the customer may request the list of movies for a specific account. The customer may add and remove movies from the list of the movies for the specific account. The customer may transfer movies from one account movie list to another account held by the customer. The customer account list of movies will also indicate if the movie has been watched or is recommended. 
 
 The Movies on Demand API should have a minimum of four entities; Customer, Account, Movie and Admin. The Customer entity should hold name, correspondence address, email and a unique customer ID number. The Account entity should have a unique ID number, username and password. The Movie entity should have a movie name, release date, movie text summary, a flag indicating if it’s been watched and another flag indicating if it’s recommended. The Admin entity is the super class of all other entities and may display all accounts, customers, customer information, global list of movies, movie information by movie ID. The Admin entity will also create new customer and movie records.
 
-Entity Relationship Diagram
- 
+## Entity Relationship Diagram
+ ![alt text](https://github.com/LukaszPlawinski/MyMovies/blob/master/src/main/resources/Diagrams/Entity%20Relationship%20Diagram.png?raw=true)
 
-Security Concerns
+## Security Concerns
 
 The security concerns with our API implementation would centre around secure access to the API endpoints and the data provided by the Movies on Demand API. We will discuss the principles we have adhered to.
 
@@ -38,7 +38,8 @@ API authorization relates to how the authenticated client interacts with the API
 API encryption allows for data to be protected with cryptographic services like SSL (Patni, 2017, p. 215). The HTTPS protocol leverages SSL and encryption to secure data from interception of network packets and API requests/responses (Patni, 2017, p. 215). Data can be protected with cryptographic services like SSL. HTTPS allows for verification of the client and server by ensuring that communication is not compromised by a “man in the middle attack” (Patni, 2017, p. 215).  For the purpose of our local server and client API implementation encryption has not been implemented.
 
 
-Work Breakdown Structure
+## Work Breakdown Structure
+
 
 The group worked on the project during Microsoft Teams conference calls. We had 10 Microsoft Teams calls in a group chat on the following below documented dates and collaborated strongly in a Slack private group chat. Slack is available on mobile and desktop apps. We communicated regularly on the project and shared ideas, links and diagrams. We worked on the group project together during our Teams calls by sharing our screens and coding the project. We did not split tasks out between the group. We also worked on the group project report together in Google Drive.
 
@@ -51,15 +52,13 @@ Meeting Date	Call Duration
 3 December 2020	32 minutes
 6 December 2020	2 hours and 23 minutes
 8 December 2020	1 hour and 16 minutes
-10 December 2020 	3 minutes
 12 December 2020	23 minutes
 13 December 2020	40 minutes 
 
 
-Work Breakdown Structure Diagram :
 
-Describe the API endpoints and their description
-RESTful API
+## RESTful API
+![alt text](https://github.com/LukaszPlawinski/MyMovies/blob/master/src/main/resources/Diagrams/Entity%20Relationship%20Diagram.png?raw=true)
 
 Endpoint 1
 
