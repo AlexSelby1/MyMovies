@@ -1,16 +1,13 @@
 
-# Web Services and API Development
-# Higher Diploma in Science in Computing – Part-time – Year 1 –
-# HDSDEV_JANOL_Y1
-
+# Web Services and API Development 
 ## Continuous Assessment 2 (50%) Team Project
  
 
 ## Group A
-### Student No	First Name	Surname
-### x19206968	Lukasz	Plawinski
-### x19222114	Alexander	Selby
-### x13122657	Conor 	Dixon
+
+### 	Lukasz	Plawinski
+### 	Alexander	Selby
+### 	Conor 	Dixon
 
 
 
@@ -60,28 +57,28 @@ Meeting Date	Call Duration
 ## RESTful API
 ![alt text](https://github.com/LukaszPlawinski/MyMovies/blob/master/src/main/resources/Diagrams/Entity%20Relationship%20Diagram.png?raw=true)
 
-Endpoint 1
+### Endpoint 1
 
-API Name	Account Resource
-Description	 Displays account info by specific ID in Json format
-URI	api/accounts /{accountID}"
-HTTP Verb	 GET
-Parameters	@PathParamintaccountID
-Resource contents	<Account>
-Preconditions	 Record for the account with the specified accountID must exist.
-Postconditions	Account info displayed
+* API Name	Account Resource
+* Description	 Displays account info by specific ID in Json format
+* URI	api/accounts /{accountID}"
+* HTTP Verb	 GET
+* Parameters	@PathParamintaccountID
+* Resource contents	<Account>
+* Preconditions	 Record for the account with the specified accountID must exist.
+* Postconditions	Account info displayed
 
-Endpoint 2
+### Endpoint 2
 
-API Name	Account Resource
-Description	 Adds Movie to the personal MovieList by account ID and Movie ID
-URI	api/accounts /{accountID}/addMovie/{movieID}")
-HTTP Verb	 POST
-Parameters	 @PathParam("movieID")long movieID,
-@PathParam("accountID") long accountID
-Resource contents	<String> name of the Movie
-Preconditions	 Record for the account and movie with the specified accountID and movieID must exist.
-Postconditions	 Movie from Global list is added to the Personal Account List
+* API Name	Account Resource
+* Description	 Adds Movie to the personal MovieList by account ID and Movie ID
+* URI	api/accounts /{accountID}/addMovie/{movieID}")
+* HTTP Verb	 POST
+* Parameters	 @PathParam("movieID")long movieID,
+* @PathParam("accountID") long accountID
+* Resource contents	<String> name of the Movie
+* Preconditions	 Record for the account and movie with the specified accountID and movieID must exist.
+* Postconditions	 Movie from Global list is added to the Personal Account List
 
 
 Endpoint 3
