@@ -146,121 +146,135 @@ Meeting Date	Call Duration
 
 ### Endpoint 8
 
-* API Name	Admin Resource
-* Description	 Creates new customer
-* URI	api/admin/customers/create
-* HTTP Verb	 POST
-* Parameters	address,customerID,email,name as JSON Object
-* Resource contents	 New  <Customer> as a JSON Object
-* Preconditions	JSON object must include all required parameters
-* Postconditions	 New customer record created
+* API: Name	Admin Resource
+* Description:	 Creates new customer
+* URI:	api/admin/customers/create
+* HTTP Verb:	 POST
+* Parameters:	
+    * address
+    * customerID
+    * email
+    * name as JSON Object
+* Resource contents:	 New  <Customer> as a JSON Object
+* Preconditions:	JSON object must include all required parameters
+* Postconditions:	 New customer record created
 
 ### Endpoint 9
 
-* API Name	Admin Resource
-* Description	 Displays global list of all movies
-* URI	api/admin/movies
-* HTTP Verb	 GET
-* Parameters	 none
-* Resource contents	 List of the Movies as JSON object
-* Preconditions	 At least one movie must exist
-* Postconditions	 List of the movies will be displayed
+* API Name:	Admin Resource
+* Description:	 Displays global list of all movies
+* URI:	api/admin/movies
+* HTTP Verb:	 GET
+* Parameters:	 none
+* Resource contents:	 List of the Movies as JSON object
+* Preconditions:	 At least one movie must exist
+* Postconditions:	 List of the movies will be displayed
 
 
 ### Endpoint 10
 
-* API Name	Admin Resource
-* Description	Displays Movie  info by specific movieID
-* URI	api/admin/movies/{movieID}
-* HTTP Verb	 GET
-* Parameters	 @PathParam("movieID") int id
-* Resource contents	 Movie info as JSON object
-* Preconditions	 Movie record with specified movieID must exist
-* Postconditions	 Movie info with specified movieID will be displayed
+* API Name:	Admin Resource
+* Description:	Displays Movie  info by specific movieID
+* URI:	api/admin/movies/{movieID}
+* HTTP Verb:	 GET
+* Parameters:
+    * @PathParam("movieID") int id
+* Resource contents:	 Movie info as JSON object
+* Preconditions:	 Movie record with specified movieID must exist
+* Postconditions:	 Movie info with specified movieID will be displayed
 
 ### Endpoint 11
 
-* API Name	Admin Resource
-* Description	 Creates new movie record
-* URI	api/admin/movies/create
-* HTTP Verb	 POST
-* Parameters	 Movie m as a JSON Object
-* Resource contents	 Created Movie as a JSON Object
-* Preconditions	 JSON object must include all required parameters
-* Postconditions	 New Movie record will be created
+* API Name:	Admin Resource
+* Description:	 Creates new movie record
+* URI:	api/admin/movies/create
+* HTTP Verb:	 POST
+* Parameters:
+    * Movie m as a JSON Object
+* Resource contents:	 Created Movie as a JSON Object
+* Preconditions:	 JSON object must include all required parameters
+* Postconditions:	 New Movie record will be created
 
 
 ### Endpoint 12
 
-* API Name	Customer Resource
-* Description	 Displays customer info by specific ID in JSON format
-* URI	api/customers/{customerID}
-* HTTP Verb	GET
-* Parameters	 @PathParamintcustomerID
-* Resource contents	<Customer>
-* Preconditions	 Record for the customer with the specified customerID must exist
-* Postconditions	 Customer info displayed
+* API Name:	Customer Resource
+* Description:	 Displays customer info by specific ID in JSON format
+* URI:	api/customers/{customerID}
+* HTTP Verb:	GET
+* Parameters:	 @PathParamintcustomerID
+* Resource contents:	<Customer>
+* Preconditions:	 Record for the customer with the specified customerID must exist
+* Postconditions:	 Customer info displayed
 
 
 ### Endpoint 13
 
-* API Name	Customer Resource
-* Description	 Displays all accounts owned by a specific customer
-* URI	api/customers/{customerID}/accounts
-* HTTP Verb	 GET
-* Parameters	 @PathParamintcustomerID
-* Resource contents	<Account>
-* Preconditions	 Customer must exist with specified ID / Customer must own accounts
-* Postconditions	 All accounts are displayed that are owned by the requested customer
+* API Name:	Customer Resource
+* Description:	 Displays all accounts owned by a specific customer
+* URI:	api/customers/{customerID}/accounts
+* HTTP Verb:	 GET
+* Parameters:
+    * @PathParamintcustomerID
+* Resource contents:	<Account>
+* Preconditions:	 Customer must exist with specified ID / Customer must own accounts
+* Postconditions:	 All accounts are displayed that are owned by the requested customer
 
 ### Endpoint 14
 
-* API Name	Customer Resource
-* Description	Customer can request the movielist from a specific account
-* URI	api/customers/{customerID}/accounts/{accountID}/movielist
-* HTTP Verb	 GET
-* Parameters	 @PathParamintaccountID
-* Resource contents	<Movie>
-* Preconditions	Customer must own the specified account. 
-* An account must own a list of movies
-* Postconditions	 Movie List request is displayed to the customer
+* API Name:	Customer Resource
+* Description:	Customer can request the movielist from a specific account
+* URI:	api/customers/{customerID}/accounts/{accountID}/movielist
+* HTTP Verb:	 GET
+* Parameters:
+    * @PathParamintaccountID
+* Resource contents:	<Movie>
+* Preconditions:
+    * Customer must own the specified account. 
+    * An account must own a list of movies
+* Postconditions:	 Movie List request is displayed to the customer
 
 ### Endpoint 15
 
-* API Name	Customer Resource
-* Description	Customer can create an account to their list.
-* URI	api/customers/{customerID}/create
-* HTTP Verb	 POST
-* Parameters	userName, password as JSON Object
-* Resource contents	 New <Account>
-* Preconditions	 JSON object must include all required parameters
-* Postconditions	 New account is created and displayed
+* API Name:	Customer Resource
+* Description:	Customer can create an account to their list.
+* URI:	api/customers/{customerID}/create
+* HTTP Verb:	 POST
+* Parameters:
+    * userName
+    * password as JSON Object
+* Resource contents:	 New <Account>
+* Preconditions:	 JSON object must include all required parameters
+* Postconditions:	 New account is created and displayed
 
 
 ### Endpoint 16
 
-* API Name	Customer Resource
-* Description	Customer can transfer a movie from one account list to another
-* URI	/api/customers/{customerID}/transferMovie/{movieID}
-* HTTP Verb	 PUT
-* Parameters	@PathParam("movieID")
-* @QueryParam("fromID") 
-* @QueryParam("toID")
-* Resource contents	 Transferred movie as JSON Objects
-* Preconditions	 Requested movie must exist within the specified accounts movie list.
-* Customer must own both accounts
-* Postconditions	 Specified movie is transferred from one account to another
+* API Name:	Customer Resource
+* Description:	Customer can transfer a movie from one account list to another
+* URI:	/api/customers/{customerID}/transferMovie/{movieID}
+* HTTP Verb:	 PUT
+* Parameters:
+    * @PathParam("movieID")
+    * @QueryParam("fromID") 
+    * @QueryParam("toID")
+* Resource contents:	 Transferred movie as JSON Objects
+* Preconditions:	 
+    * Requested movie must exist within the specified accounts movie list.
+    * Customer must own both accounts
+* Postconditions:	 Specified movie is transferred from one account to another
 
 ### Endpoint 17
 
-* API Name	Movie Resource
-* Description	 Displays movie info by specific ID in Json format
-* URI	api/movies/movieID
-* HTTP Verb	 GET
-* Parameters	@PathParamintmovieID
-* Resource contents	<Movie>
-* Preconditions	Record for the movie with the specified movieID must exist
-* Postconditions	 Movie info is displayed
+* API Name:	Movie Resource
+* Description:	 Displays movie info by specific ID in Json format
+* URI:	api/movies/movieID
+* HTTP Verb:	 GET
+* Parameters:
+    * @PathParamintmovieID
+* Resource contents:	<Movie>
+* Preconditions:	Record for the movie with the specified movieID must exist
+* Postconditions:	Movie info is displayed
 
 ## Video Presentation
 
